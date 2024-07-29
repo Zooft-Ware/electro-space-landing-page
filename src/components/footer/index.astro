@@ -1,0 +1,45 @@
+---
+import SocialMedia from "./social-media.astro";
+---
+
+<footer class="bg-[rgb(37,51,66)] text-[white] px-10 py-[18px]">
+  <hr class="my-3" />
+  <section class="flex items-center justify-between">
+    <div class="flex">
+      <span>©&nbsp;2024 Gilbane, All rights reserved</span>
+      <ul class="flex">
+        <li>
+          <a href="https://www.gilbaneco.com/privacy-policy/">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="https://www.gilbaneco.com/terms-of-use/">Terms of Use</a>
+        </li>
+        <li>
+          <a href="https://www.gilbaneco.com/site-map/">Site Map</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="flex gap-3">
+      <SocialMedia
+        icon="fa-facebook"
+        href="https://www.facebook.com/"
+        alt="Facebook"
+      />
+      <SocialMedia
+        icon="fa-x-twitter"
+        href="https://www.x.com/"
+        alt="Twitter-X"
+      />
+      <SocialMedia
+        icon="fa-instagram"
+        href="https://www.instagram.com/"
+        alt="Instagram"
+      />
+      <SocialMedia
+        icon="fa-linkedin"
+        href="https://www.linkedin.com/"
+        alt="LinkedIn"
+      />
+    </ul>
+  </section>
+</footer>
