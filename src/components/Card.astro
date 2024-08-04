@@ -1,9 +1,10 @@
 ---
 interface Props {
   title: string;
+  subtitle?: string;
 }
 
-const { title } = Astro.props;
+const { title, subtitle } = Astro.props;
 ---
 
 <div class="wp-block-emagine-column em-col">
@@ -21,8 +22,8 @@ const { title } = Astro.props;
           decoding="async"
           src="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
           class="object-cover object-center"
-          width="625"
-          height="536"
+          width="600"
+          height="338"
         />
       </div>
 
@@ -30,9 +31,7 @@ const { title } = Astro.props;
         <h3>{title}</h3>
 
         <div>
-          <span>
-            <span>Learn <span class="last-word">More</span></span>
-          </span>
+          <span>{subtitle}</span>
         </div>
       </div>
     </a>

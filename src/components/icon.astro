@@ -1,0 +1,11 @@
+---
+import type { FontAwesomeProps } from "../types/icon";
+
+type Props = FontAwesomeProps;
+
+const { icon, color, fontSize, iconType } = Astro.props;
+---
+
+<i
+  class={`${iconType ?? "fa-brands"} ${icon}`}
+  style={`font-size: ${fontSize ?? 20}px; color: ${color ?? "black"}`}></i>

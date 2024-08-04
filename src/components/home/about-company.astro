@@ -1,19 +1,36 @@
 ---
-
+import Separator from "../separator.astro";
 ---
 
-<article>
-  <span>imagen</span>
-  <section>
-    <p>
-      joven conformada por un equipo de profesionales enfocados en las
-      necesidades de nuestros clientes y en la calidad de nuestros servicios. En
-      un corto tiempo hemos desarrollado un conjunto de obras importantes en el
-      sector privado cumpliendo con los costos y tiempos de ejecución. Así mismo
-      contamos con personal técnico profesional para cumplir cualquier desafío
-      de tiempo y costo. Somos una empresa emprendedora en proceso de
-      crecimiento, con bases sólidas en ser una empresa constructora competitiva
-      y de excelentes resultados.
-    </p>
-  </section>
-</article>
+<div>
+  <Separator text="Nosotros" />
+  <article class="flex">
+    <section class="flex-[1]">
+      <img
+        src="https://postgradoingenieria.com/wp-content/uploads/obras-construccion-xxss.jpg"
+        alt="about"
+        class="h-full"
+      />
+    </section>
+    <section class="flex-[1] p-10 text-justify text-2xl flex flex-col gap-5">
+      <p>
+        <b>ELECTRO SPACE CONSTRUCCIONES</b> es una empresa joven conformada por un
+        equipo de profesionales enfocados en las necesidades de nuestros clientes
+        y en la calidad de nuestros servicios.
+      </p>
+      <p>
+        En un corto tiempo hemos desarrollado un conjunto de obras importantes
+        en el sector privado cumpliendo con los costos y tiempos de ejecución.
+      </p>
+      <p>
+        Así mismo contamos con personal técnico profesional para cumplir
+        cualquier desafío de tiempo y costo.
+      </p>
+      <p>
+        Somos una empresa emprendedora en proceso de crecimiento, con bases
+        sólidas en ser una empresa constructora competitiva y de excelentes
+        resultados.
+      </p>
+    </section>
+  </article>
+</div>
