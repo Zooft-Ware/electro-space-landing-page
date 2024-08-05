@@ -2,10 +2,11 @@
 import Logo from "../Nav/logo.astro";
 import SocialMedia from "./social-media.astro";
 import Form from "./form.astro";
+import Separator from "./separator.astro";
 ---
 
-<footer class="bg-[rgb(37,51,66)] text-[white] px-10 py-[18px]">
-  <section class="mx-80 flex">
+<footer id="footer" class="bg-primary text-[white] px-10 pt-[18px] pb-20">
+  <section class="mx-60 flex">
     <div class="flex-[1]">
       <div class="flex items-center justify-center">
         <Logo width={200} height={200} />
@@ -20,21 +21,24 @@ import Form from "./form.astro";
       </div>
     </div>
     <div class="flex-[1]">
-      <h1>Cuéntanos sobre tu proyecto</h1>
+      <h1 class="text-xl mb-5">Cuéntanos sobre tu proyecto</h1>
       <Form />
     </div>
   </section>
-  <hr class="my-3" />
+  <hr class="my-5" />
   <section class="flex items-center justify-between">
     <div class="flex">
       <span>©&nbsp;2024 Gilbane, All rights reserved</span>
+      <Separator />
       <ul class="flex">
         <li>
           <a href="https://www.gilbaneco.com/privacy-policy/">Privacy Policy</a>
         </li>
+        <Separator />
         <li>
           <a href="https://www.gilbaneco.com/terms-of-use/">Terms of Use</a>
         </li>
+        <Separator />
         <li>
           <a href="https://www.gilbaneco.com/site-map/">Site Map</a>
         </li>

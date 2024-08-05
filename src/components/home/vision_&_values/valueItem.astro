@@ -11,6 +11,8 @@ const { title, className, ...iconProps } = Astro.props;
 ---
 
 <div class={`flex flex-col items-center ${className ? className : ""}`}>
-  <Icon {...iconProps} />
-  <span>{title}</span>
+  <div class="border-[1px] rounded-full p-8">
+    <Icon {...iconProps} color="#c8cace" />
+  </div>
+  <span class="text-4xl font-[inter-regular] text-primary mt-3">{title}</span>
 </div>

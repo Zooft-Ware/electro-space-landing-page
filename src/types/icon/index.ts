@@ -3,5 +3,5 @@ export interface FontAwesomeProps {
   icon: string;
   iconType?: "fa-brands" | "fa-thin" | "fa-sharp" | "fa-solid";
   fontSize?: number;
-  color?: number;
+  color?: string;
 }

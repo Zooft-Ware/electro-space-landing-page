@@ -2,12 +2,15 @@
 interface Props {
   width?: number;
   height?: number;
+  aClassName?: string;
+  viewId?: string;
 }
 
-const { width, height } = Astro.props;
+const { width, height, aClassName, viewId } = Astro.props;
+const { href } = Astro.url;
 ---
 
-<a href="">
+<a href={href} class={aClassName} data-view-id={viewId}>
   <img
     src="/logo_no_background.png"
     alt="logo"
