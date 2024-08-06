@@ -50,6 +50,10 @@ export default {
         title: "#2d4256",
         subtitle: "#5b6673",
         content: "#5b6673",
+        alternate: "#e2231a",
+      },
+      transitionProperty: {
+        "translate-opacity": "translate, opacity",
       },
     },
   },

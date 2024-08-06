@@ -1,29 +1,34 @@
 ---
 import Card from "../Card.astro";
+import Fade from "../fade.astro";
 ---
 
-<section id="projects" class="px-10 pb-8">
-  <h1 class="text-3xl text-center py-5">Proyectos</h1>
-  <div class="grid grid-cols-3 gap-5 justify-center item-center">
-    <Card
-      title="Pemex"
-      subtitle="Projects"
-      imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
-    />
-    <Card
-      title="Pemex"
-      subtitle="Projects"
-      imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
-    />
-    <Card
-      title="Pemex"
-      subtitle="Projects"
-      imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
-    />
-    <Card
-      title="Pemex"
-      subtitle="Projects"
-      imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
-    />
-  </div>
-</section>
+<Fade id="projects">
+  <section id="projects" class="pb-8 md:px-10 px-5">
+    <h1 class="text-3xl text-center py-5">Proyectos</h1>
+    <div
+      class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 justify-center item-center"
+    >
+      <Card
+        title="Pemex"
+        subtitle="Projects"
+        imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
+      />
+      <Card
+        title="Pemex"
+        subtitle="Projects"
+        imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
+      />
+      <Card
+        title="Pemex"
+        subtitle="Projects"
+        imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
+      />
+      <Card
+        title="Pemex"
+        subtitle="Projects"
+        imgSrc="https://www.gilbaneco.com/wp-content/uploads/2023/02/construction_overview.jpg"
+      />
+    </div>
+  </section>
+</Fade>

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 interface Props {
   title: string;
   imgSrc: string;
@@ -16,11 +17,14 @@ const { title, subtitle, imgSrc, titleColor, subtitleColor } = Astro.props;
     href="https://www.gilbaneco.com/building/services/construction-management/"
   >
     <div>
-      <img
+      <Image
+        alt="card"
         fetchpriority="high"
         decoding="async"
         src={imgSrc}
         class="object-cover object-center w-full h-[400px]"
+        width={400}
+        height={400}
       />
     </div>
 

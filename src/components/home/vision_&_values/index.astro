@@ -1,45 +1,50 @@
 ---
+import Fade from "@app/components/fade.astro";
 import ValueItem from "./valueItem.astro";
 const ICON_SIZE = 80;
 ---
 
-<section id="vision_&_values" class="w-full min-h-screen flex flex-col">
-  <div class="bg-secondary text-white py-10">
-    <h1 class="text-center text-3xl mb-5">Vision y valores</h1>
-    <p class="text-2xl text-justify">
-      Ser la constructora líder elegida por nuestros proyectos de diseños
-      innovadores, ingeniería, construcción y comercialización de inmuebles de
-      alta calidad que desarrollamos, con personal altamente calificado,
-      optimizando los costos pensando en ofrecer diferentes opciones a los
-      clientes manteniendo altos estándares de calidad con servicio al cliente
-      que garantice solidez y reconocimiento contribuyendo al desarrollo de
-      nuestro país, y optar por lograr niveles de evolución altos.
-    </p>
-  </div>
-  <div class="grid grid-cols-2 gap-5 flex-[1] items-center py-20">
-    <ValueItem
-      icon="fa-envelope"
-      iconType="fa-solid"
-      title="Honestidad"
-      fontSize={ICON_SIZE}
-    />
-    <ValueItem
-      icon="fa-envelope"
-      iconType="fa-solid"
-      title="Capacidad"
-      fontSize={ICON_SIZE}
-    />
-    <ValueItem
-      icon="fa-envelope"
-      iconType="fa-solid"
-      title="Responsabilidad"
-      fontSize={ICON_SIZE}
-    />
-    <ValueItem
-      icon="fa-envelope"
-      iconType="fa-solid"
-      title="Proactividad"
-      fontSize={ICON_SIZE}
-    />
-  </div>
-</section>
+<Fade id="vision_&_values">
+  <section id="vision_&_values" class="w-full min-h-screen flex flex-col">
+    <div class="bg-secondary text-white py-10 md:px-10 px-5">
+      <h1 class="text-center text-3xl mb-5">Vision y valores</h1>
+      <p class="md:text-2xl text-xl text-justify">
+        Ser la constructora líder elegida por nuestros proyectos de diseños
+        innovadores, ingeniería, construcción y comercialización de inmuebles de
+        alta calidad que desarrollamos, con personal altamente calificado,
+        optimizando los costos pensando en ofrecer diferentes opciones a los
+        clientes manteniendo altos estándares de calidad con servicio al cliente
+        que garantice solidez y reconocimiento contribuyendo al desarrollo de
+        nuestro país, y optar por lograr niveles de evolución altos.
+      </p>
+    </div>
+    <div
+      class="grid md:grid-cols-2 grid-cols-1 gap-5 flex-[1] items-center py-20"
+    >
+      <ValueItem
+        icon="fa-envelope"
+        iconType="fa-solid"
+        title="Honestidad"
+        fontSize={ICON_SIZE}
+      />
+      <ValueItem
+        icon="fa-warehouse"
+        iconType="fa-solid"
+        title="Capacidad"
+        fontSize={ICON_SIZE}
+      />
+      <ValueItem
+        icon="fa-reply"
+        iconType="fa-solid"
+        title="Responsabilidad"
+        fontSize={ICON_SIZE}
+      />
+      <ValueItem
+        icon="fa-user-nurse"
+        iconType="fa-solid"
+        title="Proactividad"
+        fontSize={ICON_SIZE}
+      />
+    </div>
+  </section>
+</Fade>

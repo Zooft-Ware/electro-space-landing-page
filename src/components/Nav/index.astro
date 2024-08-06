@@ -12,12 +12,24 @@ const { href } = Astro.url;
   <section>
     <Logo aClassName="Nav-Item" viewId="top" />
   </section>
-  <ul class="flex gap-5 items-center justify-between">
-    <Item viewId="about" name="Nosotros" href={href} className="Nav-Item" />
-    <Item viewId="services" name="Servicios" href={href} className="Nav-Item" />
-    <Item viewId="projects" name="Proyectos" href={href} className="Nav-Item" />
-    <Item viewId="footer" name="Contacto" href={href} className="Nav-Item" />
-  </ul>
+  <section>
+    <ul class="items-center justify-between flex md:flex-row md:gap-5 flex-col">
+      <Item viewId="about" name="Nosotros" href={href} className="Nav-Item" />
+      <Item
+        viewId="services"
+        name="Servicios"
+        href={href}
+        className="Nav-Item"
+      />
+      <Item
+        viewId="projects"
+        name="Proyectos"
+        href={href}
+        className="Nav-Item"
+      />
+      <Item viewId="footer" name="Contacto" href={href} className="Nav-Item" />
+    </ul>
+  </section>
 </nav>
 
 <script>
