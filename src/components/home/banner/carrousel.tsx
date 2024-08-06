@@ -15,10 +15,16 @@ const RenderImg = ({ src, active }: RenderImgProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (active) imgRef.current!.style.opacity = "1";
+    if (active) {
+      imgRef.current!.style.opacity = "1";
+      imgRef.current!.style.zIndex = "1";
+    }
 
     return () => {
-      if (active) imgRef.current!.style.opacity = "0";
+      if (active) {
+        imgRef.current!.style.opacity = "0";
+        imgRef.current!.style.zIndex = "0";
+      }
     };
   }, [active]);
 
@@ -27,7 +33,7 @@ const RenderImg = ({ src, active }: RenderImgProps) => {
       ref={imgRef}
       src={src}
       alt="banner"
-      className="object-center md:object-fill object-cover w-full h-[calc(100vh+130px)] absolute top-[-130px] left-[0] transition-opacity"
+      className="object-center md:object-fill object-cover w-full h-[calc(100vh+130px)] absolute top-[-130px] left-[0] transition-opacity duration-1000"
     />
   );
 };
@@ -44,12 +50,11 @@ export default function BannerCarrousel() {
     }, 7000);
   }, []);
 
-  console.log({ activeIndex });
-
   return (
     <>
       {BANNER_URIS.map((src, idx) => {
-        return <RenderImg src={src} key={src} active={idx === activeIndex} />;
+        const active = idx === activeIndex;
+        return <RenderImg src={src} key={idx} active={active} />;
       })}
     </>
   );
