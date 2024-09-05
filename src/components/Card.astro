@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 interface Props {
   title: string;
   imgSrc: string;
@@ -12,17 +11,14 @@ const { title, subtitle, imgSrc, titleColor, subtitleColor } = Astro.props;
 ---
 
 <div>
-  <a
-    class="card"
-    href="https://www.gilbaneco.com/building/services/construction-management/"
-  >
-    <div>
-      <Image
+  <a class="card" href="#">
+    <div class="overflow-hidden">
+      <img
         alt="card"
         fetchpriority="high"
         decoding="async"
         src={imgSrc}
-        class="object-cover object-center w-full h-[400px]"
+        class="object-cover object-center w-full h-[400px] transition-transform hover:scale-125"
         width={400}
         height={400}
       />

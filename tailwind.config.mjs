@@ -55,6 +55,9 @@ export default {
       transitionProperty: {
         "translate-opacity": "translate, opacity",
       },
+      transitionDuration: {
+        1200: "1200ms",
+      },
     },
   },
   plugins: [],

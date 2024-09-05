@@ -34,15 +34,33 @@ const { href } = Astro.url;
 
 <script>
   let isPrimary = false;
+  let lastScrollPosition = 0;
   const OFFSET_Y = 130;
   const Nav = document.querySelector("#main_nav") as HTMLDivElement;
   if (window.scrollY < OFFSET_Y) {
-    Nav.style.background = "transparent";
+    Nav.style.background =
+      "linear-gradient(0deg, rgba(43, 63, 81, 0) 0%, #2d4256 100%)";
     Nav.style.color = "white";
   }
+
+  window.addEventListener("scroll", onScroll);
+  const NavItems = document.querySelectorAll(
+    ".Nav-Item"
+  ) as NodeListOf<HTMLAnchorElement>;
+
+  NavItems.forEach((item) => {
+    item.addEventListener("click", (e) => goTo(e, item));
+  });
+
   function onScroll() {
+    handleNavColor();
+    handleNavDisplay();
+  }
+
+  function handleNavColor() {
     if (window.scrollY < OFFSET_Y && isPrimary) {
-      Nav.style.background = "transparent";
+      Nav.style.background =
+        "linear-gradient(0deg, rgba(43, 63, 81, 0) 0%, #2d4256 100%)";
       Nav.style.color = "white";
       isPrimary = false;
     } else if (!isPrimary && window.scrollY > OFFSET_Y) {
@@ -52,7 +70,22 @@ const { href } = Astro.url;
     }
   }
 
-  window.addEventListener("scroll", onScroll);
+  function handleNavDisplay() {
+    const currentScrollPosition = window.scrollY;
+    const screenHeight = window.innerHeight;
+
+    console.log({ lastScrollPosition, currentScrollPosition, screenHeight });
+
+    if (
+      currentScrollPosition < screenHeight ||
+      currentScrollPosition < lastScrollPosition
+    ) {
+      Nav.style.transform = "none";
+    } else {
+      Nav.style.transform = `translate(0px, -${OFFSET_Y}px)`;
+    }
+    lastScrollPosition = currentScrollPosition;
+  }
 
   function goTo(e: Event, element: HTMLAnchorElement) {
     e.preventDefault();
@@ -65,12 +98,4 @@ const { href } = Astro.url;
     const view = document.querySelector(`#${viewId}`) as HTMLDListElement;
     view?.scrollIntoView({ behavior: "smooth" });
   }
-
-  const NavItems = document.querySelectorAll(
-    ".Nav-Item"
-  ) as NodeListOf<HTMLAnchorElement>;
-
-  NavItems.forEach((item) => {
-    item.addEventListener("click", (e) => goTo(e, item));
-  });
 </script>

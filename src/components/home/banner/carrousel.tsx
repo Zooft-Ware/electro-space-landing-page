@@ -5,36 +5,37 @@ interface RenderImgProps {
   active: boolean;
 }
 
-const BANNER_URIS = [
-  "https://www.eleconomista.com.mx/__export/1665373853713/sites/eleconomista/img/2022/10/09/edificios_en_construccixn__elr.jpg_185051853.jpg",
-  "https://constructoresrivera.com/wp-content/uploads/2020/04/asi-son-las-nuevas-tendencias-en-la-construccion.jpg",
-  "https://www.aceroform.com.mx/wp-content/uploads/2020/10/banner-construccion-1200x675.jpg",
-];
+const BANNER_URIS = ["images/banner-1.mp4"];
 
-const RenderImg = ({ src, active }: RenderImgProps) => {
-  const imgRef = useRef<HTMLImageElement>(null);
+const RenderMedia = ({ src, active }: RenderImgProps) => {
+  const mediaRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (active) {
-      imgRef.current!.style.opacity = "1";
-      imgRef.current!.style.zIndex = "1";
+      mediaRef.current!.style.opacity = "1";
+      mediaRef.current!.style.zIndex = "1";
     }
 
     return () => {
       if (active) {
-        imgRef.current!.style.opacity = "0";
-        imgRef.current!.style.zIndex = "0";
+        mediaRef.current!.style.opacity = "0";
+        mediaRef.current!.style.zIndex = "0";
       }
     };
   }, [active]);
 
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt="banner"
+    <video
       className="object-center md:object-fill object-cover w-full h-[calc(100vh+130px)] absolute top-[-130px] left-[0] transition-opacity duration-1000"
-    />
+      muted
+      loop
+      preload="1"
+      playsInline
+      autoPlay
+      ref={mediaRef}
+    >
+      <source src={src} type="video/mp4" />
+    </video>
   );
 };
 
@@ -42,6 +43,7 @@ export default function BannerCarrousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    if (BANNER_URIS.length === 1) return;
     setInterval(() => {
       setActiveIndex((prev) => {
         if (prev >= BANNER_URIS.length - 1) return 0;
@@ -54,7 +56,7 @@ export default function BannerCarrousel() {
     <>
       {BANNER_URIS.map((src, idx) => {
         const active = idx === activeIndex;
-        return <RenderImg src={src} key={idx} active={active} />;
+        return <RenderMedia src={src} key={idx} active={active} />;
       })}
     </>
   );
