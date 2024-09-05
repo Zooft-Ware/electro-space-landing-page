@@ -8,16 +8,16 @@ import Form from "./form.tsx";
 
 <footer
   id="footer"
-  class="bg-primary text-[white] px-10 pt-[18px] pb-20 relative"
+  class="bg-primary text-[white] px-10 pt-[18px] pb-16 relative"
 >
-  <section
-    class="lg:mx-60 md:mx-30 mx-0 flex md:flex-row flex-col-reverse gap-5"
-  >
-    <div class="flex-[1]">
+  <section class="mx-0 flex md:flex-row flex-col-reverse gap-5">
+    <div
+      class="flex flex-[1] justify-evenly md:flex-row flex-col md:gap-[0px] gap-5"
+    >
       <div class="flex items-center justify-center">
         <Logo width={200} height={200} />
       </div>
-      <div>
+      <div class="flex flex-col items-center justify-center">
         <p>Ricardo Margáin 335</p>
         <p>Col. Valle del Campestre</p>
         <p>San Pedro Garza García, Nuevo León</p>
@@ -26,14 +26,17 @@ import Form from "./form.tsx";
         <p>proyectos@adobse.mx</p>
       </div>
     </div>
-    <div class="flex-[1]">
+    {
+      /*  <div class="flex-[1]">
       <h1 class="text-xl mb-5">Cuéntanos sobre tu proyecto</h1>
       <Form />
-    </div>
+    </div>*/
+    }
   </section>
   <hr class="my-5" />
-  <section class="flex md:flex-row flex-col gap-3 items-center justify-between">
-    <div class="flex">
+  <section class="flex md:flex-row flex-col gap-3 items-center justify-end">
+    {
+      /* <div class="flex">
       <span>©&nbsp;2024 Gilbane, All rights reserved</span>
       <Separator />
       <ul class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2">
@@ -49,7 +52,8 @@ import Form from "./form.tsx";
           <a href="https://www.gilbaneco.com/site-map/">Site Map</a>
         </li>
       </ul>
-    </div>
+    </div> */
+    }
     <ul class="flex gap-3">
       <SocialMedia
         icon="fa-facebook"
@@ -72,6 +76,11 @@ import Form from "./form.tsx";
         alt="LinkedIn"
       />
     </ul>
+  </section>
+  <section class="mt-10">
+    <p class="text-center">
+      Designed by Zooftware. ©&nbsp; 2024 All Rights Reserved
+    </p>
   </section>
   <section class="fixed bottom-[20px] right-[50px]">
     <GoToTopButton />

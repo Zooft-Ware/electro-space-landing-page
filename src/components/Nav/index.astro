@@ -7,7 +7,7 @@ const { href } = Astro.url;
 
 <nav
   id="main_nav"
-  class="flex items-center justify-between px-10 sticky top-[0] bg-[white] gap-3 h-[130px] w-full z-20"
+  class="flex items-center justify-between px-10 sticky top-[0] bg-[white] gap-3 h-[130px] w-full z-20 transition-transform"
 >
   <section>
     <Logo aClassName="Nav-Item" viewId="top" />
@@ -73,8 +73,6 @@ const { href } = Astro.url;
   function handleNavDisplay() {
     const currentScrollPosition = window.scrollY;
     const screenHeight = window.innerHeight;
-
-    console.log({ lastScrollPosition, currentScrollPosition, screenHeight });
 
     if (
       currentScrollPosition < screenHeight ||

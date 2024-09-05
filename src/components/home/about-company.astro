@@ -4,14 +4,20 @@ import Separator from "../separator.astro";
 ---
 
 <Fade id="about">
-  <div id="about" class="w-full min-h-screen flex flex-col">
+  <div id="about" class="w-full md:max-h-screen flex flex-col">
     <Separator text="Nosotros" />
-    <article class="flex md:flex-row flex-col flex-[1] pr-5 md:mb-[0px]">
-      <section class="flex-[1]">
-        <img src="images/main-4.jpeg" alt="about" class="h-full w-full pb-1" />
+    <article
+      class="flex md:flex-row flex-col flex-[1] md:pr-5 pr-[0px] md:mb-[0px]"
+    >
+      <section class="flex-[1] md:max-h-screen">
+        <img
+          src="images/main-9.jpeg"
+          alt="about"
+          class="md:max-h-[inherit] max-h-screen w-full pb-1 object-center md:object-fill object-cover"
+        />
       </section>
       <section
-        class="flex-[1] justify-start text-justify md:text-2xl text-xl flex flex-col gap-5 pl-10 pt-10 text-subtitle_alternate"
+        class="flex-[1] justify-start text-justify md:text-2xl text-xl flex flex-col gap-5 md:pr-[0px] pr-5 md:pl-10 pl-5 md:pt-10 pt-[0px] text-subtitle_alternate"
       >
         <p>
           <b>ELECTRO SPACE CONSTRUCCIONES</b> es una empresa joven conformada por
