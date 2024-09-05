@@ -51,6 +51,7 @@ export default {
         subtitle: "#5b6673",
         content: "#5b6673",
         alternate: "#e2231a",
+        subtitle_alternate: "#5d6672",
       },
       transitionProperty: {
         "translate-opacity": "translate, opacity",
