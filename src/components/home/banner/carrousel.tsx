@@ -5,7 +5,7 @@ interface RenderImgProps {
   active: boolean;
 }
 
-const BANNER_URIS = ["images/banner-1.mp4"];
+const BANNER_URIS = ["videos/banner_hd.mp4"];
 
 const RenderMedia = ({ src, active }: RenderImgProps) => {
   const mediaRef = useRef<HTMLVideoElement>(null);

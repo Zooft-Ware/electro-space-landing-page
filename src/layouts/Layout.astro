@@ -46,6 +46,22 @@ const { title } = Astro.props;
       font-display: swap;
       src: url(/fonts/junction/Junction-regular.otf) format("opentype");
     }
+
+    @font-face {
+      font-family: "LEMONMILK-Light";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/lemon-milk/LEMONMILK-Light.otf) format("opentype");
+    }
+
+    @font-face {
+      font-family: "LEMONMILK-Regular";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/lemon-milk/LEMONMILK-Regular.otf) format("opentype");
+    }
   }
 
   * {
@@ -65,7 +81,7 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: "Juntion-Regular", sans-serif;
+    font-family: "LEMONMILK-Light", sans-serif;
   }
 </style>
 

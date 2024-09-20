@@ -6,6 +6,24 @@ import GoToTopButton from "../goToTopButton.astro";
 import Form from "./form.tsx";
 ---
 
+<style>
+  .contact-info {
+    display: flex;
+    align-items: left !important;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .contact-info img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .phone-number {
+    font-size: 1.2rem;
+  }
+</style>
+
 <footer
   id="footer"
   class="bg-primary text-[white] px-10 pt-[18px] pb-16 relative"
@@ -17,72 +35,95 @@ import Form from "./form.tsx";
       <div class="flex items-center justify-center">
         <Logo width={200} height={200} />
       </div>
-      <div class="flex flex-col items-center justify-center">
-        <p>Ricardo Margáin 335</p>
-        <p>Col. Valle del Campestre</p>
-        <p>San Pedro Garza García, Nuevo León</p>
-        <p class="my-10">Tel: (81) 8000 5700</p>
-        <p>contacto@adobse.mx</p>
-        <p>proyectos@adobse.mx</p>
+
+      <div class="flex flex-col items-start justify-center">
+        <!-- Texto centrado -->
+        <p class="text-center w-full" style="margin-bottom: 1rem;">Contacto</p>
+        
+        <Form/>
+
+
+        {/* 
+        <div class="contact-info">
+          <!-- Enlace para WhatsApp del primer número -->
+          <a
+            href="https://wa.me/528122024566"
+            target="_blank"
+            title="Enviar WhatsApp al (+52) 81 2202 4566"
+          >
+            <img src="/whatsapp.svg" alt="WhatsApp" />
+          </a>
+
+          <!-- Enlace para llamada telefónica del primer número -->
+          <a href="tel:+528122024566" title="Llamar al (+52) 81 2202 4566">
+            <img src="/telefono.png" alt="Llamar" />
+          </a>
+
+          <!-- Número de teléfono visible -->
+          <span class="phone-number">(+52) 81 2202 4566</span>
+        </div>
+
+        <div class="contact-info">
+          <!-- Enlace para WhatsApp del segundo número -->
+          <a
+            href="https://wa.me/528115397144"
+            target="_blank"
+            title="Enviar WhatsApp al (+52) 81 1539 7144"
+          >
+            <img src="/whatsapp.svg" alt="WhatsApp" />
+          </a>
+
+          <!-- Enlace para llamada telefónica del segundo número -->
+          <a href="tel:+528115397144" title="Llamar al (+52) 81 1539 7144">
+            <img src="/telefono.png" alt="Llamar" />
+          </a>
+
+          <!-- Número de teléfono visible -->
+          <span class="phone-number">(+52) 81 1539 7144</span>
+        </div>
+
+        <!-- Correos electrónicos con íconos de correo -->
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a rlozano@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>rlozano@electrospace.com.mx</span>
+        </div>
+
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a brios@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>brios@electrospace.com.mx</span>
+        </div>
+
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a gortiz@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>gortiz@electrospace.com.mx</span>
+        </div>
+        */}
       </div>
     </div>
-    {
-      /*  <div class="flex-[1]">
-      <h1 class="text-xl mb-5">Cuéntanos sobre tu proyecto</h1>
-      <Form />
-    </div>*/
-    }
-  </section>
-  <hr class="my-5" />
-  <section class="flex md:flex-row flex-col gap-3 items-center justify-end">
-    {
-      /* <div class="flex">
-      <span>©&nbsp;2024 Gilbane, All rights reserved</span>
-      <Separator />
-      <ul class="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2">
-        <li>
-          <a href="https://www.gilbaneco.com/privacy-policy/">Privacy Policy</a>
-        </li>
-        <Separator />
-        <li>
-          <a href="https://www.gilbaneco.com/terms-of-use/">Terms of Use</a>
-        </li>
-        <Separator />
-        <li>
-          <a href="https://www.gilbaneco.com/site-map/">Site Map</a>
-        </li>
-      </ul>
-    </div> */
-    }
-    <ul class="flex gap-3">
-      <SocialMedia
-        icon="fa-facebook"
-        href="https://www.facebook.com/"
-        alt="Facebook"
-      />
-      <SocialMedia
-        icon="fa-x-twitter"
-        href="https://www.x.com/"
-        alt="Twitter-X"
-      />
-      <SocialMedia
-        icon="fa-instagram"
-        href="https://www.instagram.com/"
-        alt="Instagram"
-      />
-      <SocialMedia
-        icon="fa-linkedin"
-        href="https://www.linkedin.com/"
-        alt="LinkedIn"
-      />
-    </ul>
-  </section>
-  <section class="mt-10">
-    <p class="text-center">
-      Designed by Zooftware. ©&nbsp; 2024 All Rights Reserved
-    </p>
-  </section>
-  <section class="fixed bottom-[20px] right-[50px]">
-    <GoToTopButton />
   </section>
 </footer>
+<hr class="my-5" />
+
+<section class="mt-10">
+  <p class="text-center">
+    Designed by Zooftware. ©&nbsp; 2024 All Rights Reserved
+  </p>
+</section>
+<section class="fixed bottom-[20px] right-[50px]">
+  <GoToTopButton />
+</section>
