@@ -1,0 +1,43 @@
+---
+import Fade from "../fade.astro";
+import Separator from "../separator.astro";
+---
+
+<Fade id="about">
+  <div id="about" class="w-full md:max-h-screen flex flex-col">
+    <Separator text="Nosotros" />
+    <article
+      class="flex md:flex-row flex-col flex-[1] md:pr-5 pr-[0px] md:mb-[0px]"
+    >
+      <section class="flex-[1] md:max-h-screen">
+        <img
+          src="images/nosotros/imagen2.jpg"
+          alt="about"
+          class="md:max-h-[inherit] max-h-screen w-full pb-1 object-center md:object-fill object-cover"
+        />
+      </section>
+      <section
+        class="flex-[1] justify-start text-justify md:text-2xl text-xl flex flex-col gap-5 md:pr-[0px] pr-5 md:pl-10 pl-5 md:pt-10 pt-[0px] text-subtitle_alternate"
+      >
+        <p>
+          <b>ELECTRO SPACE CONSTRUCCIONES</b> es una empresa joven conformada por
+          un equipo de profesionales enfocados en las necesidades de nuestros clientes
+          y en la calidad de nuestros servicios.
+        </p>
+        <p>
+          En un corto tiempo hemos desarrollado un conjunto de obras importantes
+          en el sector privado cumpliendo con los costos y tiempos de ejecución.
+        </p>
+        <p>
+          Así mismo contamos con personal técnico profesional para cumplir
+          cualquier desafío de tiempo y costo.
+        </p>
+        <p>
+          Somos una empresa emprendedora en proceso de crecimiento, con bases
+          sólidas en ser una empresa constructora competitiva y de excelentes
+          resultados.
+        </p>
+      </section>
+    </article>
+  </div>
+</Fade>

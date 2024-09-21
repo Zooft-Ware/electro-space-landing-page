@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  width?: number;
+  height?: number;
+  aClassName?: string;
+  imgClassName?: string;
+  viewId?: string;
+}
+
+const { width, height, aClassName, viewId, imgClassName } = Astro.props;
+const { href } = Astro.url;
+---
+
+<a href={href} class={aClassName} data-view-id={viewId}>
+  <Image
+    src="/logo_no_background.png"
+    alt="logo"
+    class={imgClassName}
+    width={width ?? 120}
+    height={height ?? 120}
+  />
+</a>

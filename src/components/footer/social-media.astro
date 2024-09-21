@@ -1,0 +1,25 @@
+---
+import type { FontAwesomeProps } from "../../types/icon";
+import Icon from "../icon.astro";
+
+interface Props extends FontAwesomeProps {
+  href: string;
+  alt?: string;
+}
+
+const { alt, href, ...iconProps } = Astro.props;
+---
+
+<li
+  class="bg-[white] text-[#192334] rounded-full w-[40px] h-[40px] transition hover:bg-[#192334] hover:text-white"
+>
+  <a
+    target="_blank"
+    rel="noopener"
+    href={href}
+    class="w-full h-full flex items-center justify-center relative"
+  >
+    {alt && <span class="w-[1px] h-[1px] overflow-hidden absolute">{alt}</span>}
+    <Icon {...iconProps} />
+  </a>
+</li>

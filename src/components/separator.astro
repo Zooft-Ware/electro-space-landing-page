@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div
+  class="w-full flex items-center justify-center bg-[rgb(37,51,66)] text-white py-5"
+>
+  <span class="text-3xl" style="font-family: 'LEMONMILK-Regular';">{text}</span>
+</div>

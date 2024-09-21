@@ -1,0 +1,18 @@
+---
+import Icon from "./icon.astro";
+---
+
+<button
+  id="goToTop"
+  class="bg-alternate flex items-center justify-center w-[2.5rem] h-[2.5rem] rounded-full opacity-[0.8]"
+>
+  <Icon icon="fa-arrow-up" iconType="fa-solid" color="white" fontSize={16} />
+</button>
+
+<script>
+  const button = document.querySelector("#goToTop") as HTMLButtonElement;
+  button?.addEventListener("click", goToTop);
+  function goToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+</script>

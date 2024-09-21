@@ -1,0 +1,31 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const containerId = `fade_${id}`;
+---
+
+<div id={containerId} class="translate-opacity duration-1200">
+  <slot />
+</div>
+
+<script is:inline define:vars={{ containerId }}>
+  const container = document.querySelector(`#${containerId}`);
+  container.classList.add("-translate-y-28", "opacity-0");
+  const observer = new IntersectionObserver(onObserve, {
+    root: null,
+    rootMargin: "0px",
+  });
+
+  observer.observe(container);
+
+  function onObserve(entries) {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      observer.disconnect();
+      container.classList.remove("-translate-y-28", "opacity-0");
+    }
+  }
+</script>

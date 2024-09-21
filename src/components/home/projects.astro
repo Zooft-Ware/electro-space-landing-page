@@ -1,0 +1,39 @@
+---
+import Card from "../Card.astro";
+import Fade from "../fade.astro";
+---
+
+<Fade id="projects">
+  <section id="projects" class="pb-8 md:px-10 px-5">
+    <h1
+      class="text-3xl text-center py-5"
+      style="font-family: 'LEMONMILK-Regular';"
+    >
+      Proyectos
+    </h1>
+    <div
+      class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10 justify-center item-center"
+    >
+      <Card
+        title="Supermercado"
+        subtitle="SuperMercados"
+        imgSrc="images/proyectos/proyecto1.jpg"
+      />
+      <Card
+        title="Petro Seven"
+        subtitle="Oficinas y gasolineras"
+        imgSrc="images/proyectos/proyecto2.jpg"
+      />
+      <Card
+        title="Akron"
+        subtitle="Gasolineras"
+        imgSrc="images/proyectos/proyecto3.jpg"
+      />
+      <Card
+        title="Restaurantes"
+        subtitle="Pizza hut"
+        imgSrc="images/proyectos/proyecto4.jpg"
+      />
+    </div>
+  </section>
+</Fade>

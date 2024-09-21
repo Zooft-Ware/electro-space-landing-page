@@ -1,0 +1,131 @@
+---
+import Logo from "../Nav/logo.astro";
+import GoToTopButton from "../goToTopButton.astro";
+import Form from "./form.tsx";
+---
+
+<style>
+  .contact-info {
+    display: flex;
+    align-items: left !important;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .contact-info img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .phone-number {
+    font-size: 1.2rem;
+  }
+</style>
+
+<footer
+  id="footer"
+  class="bg-primary text-[white] px-10 pt-[18px] pb-16 relative"
+>
+  <section class="mx-0 flex md:flex-row flex-col-reverse gap-5">
+    <div class="flex flex-[1] md:flex-row flex-col md:gap-[0px] gap-5">
+      <div class="flex flex-[1] items-center justify-center">
+        <Logo width={200} height={200} />
+      </div>
+
+      <div class="flex flex-[1] flex-col items-start justify-center">
+        <!-- Texto centrado -->
+        <p
+          class="text-center w-full"
+          style="margin-bottom: 1rem; font-family: 'LEMONMILK-Regular';"
+        >
+          Contacto
+        </p>
+
+        <Form client:visible />
+
+        {
+          /* 
+        <div class="contact-info">
+          <!-- Enlace para WhatsApp del primer número -->
+          <a
+            href="https://wa.me/528122024566"
+            target="_blank"
+            title="Enviar WhatsApp al (+52) 81 2202 4566"
+          >
+            <img src="/whatsapp.svg" alt="WhatsApp" />
+          </a>
+
+          <!-- Enlace para llamada telefónica del primer número -->
+          <a href="tel:+528122024566" title="Llamar al (+52) 81 2202 4566">
+            <img src="/telefono.png" alt="Llamar" />
+          </a>
+
+          <!-- Número de teléfono visible -->
+          <span class="phone-number">(+52) 81 2202 4566</span>
+        </div>
+
+        <div class="contact-info">
+          <!-- Enlace para WhatsApp del segundo número -->
+          <a
+            href="https://wa.me/528115397144"
+            target="_blank"
+            title="Enviar WhatsApp al (+52) 81 1539 7144"
+          >
+            <img src="/whatsapp.svg" alt="WhatsApp" />
+          </a>
+
+          <!-- Enlace para llamada telefónica del segundo número -->
+          <a href="tel:+528115397144" title="Llamar al (+52) 81 1539 7144">
+            <img src="/telefono.png" alt="Llamar" />
+          </a>
+
+          <!-- Número de teléfono visible -->
+          <span class="phone-number">(+52) 81 1539 7144</span>
+        </div>
+
+        <!-- Correos electrónicos con íconos de correo -->
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a rlozano@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>rlozano@electrospace.com.mx</span>
+        </div>
+
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a brios@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>brios@electrospace.com.mx</span>
+        </div>
+
+        <div class="contact-info">
+          <a
+            href="mailto:rlozano@electrospace.com.mx,brios@electrospace.com.mx,gortiz@electrospace.com.mx?subject=Información%20de%20presupuesto"
+            title="Enviar correo a gortiz@electrospace.com.mx"
+          >
+            <img src="/email-icon.png" alt="Correo" />
+          </a>
+          <span>gortiz@electrospace.com.mx</span>
+        </div>
+        */
+        }
+      </div>
+    </div>
+  </section>
+</footer>
+<hr class="my-5" />
+
+<section class="mt-10">
+  <p class="text-center">
+    Designed by Zooftware. ©&nbsp; 2024 All Rights Reserved
+  </p>
+</section>
+<section class="fixed bottom-[20px] right-[50px]">
+  <GoToTopButton />
+</section>

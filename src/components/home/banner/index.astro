@@ -1,0 +1,25 @@
+---
+import BannerCarrousel from "./carrousel.tsx";
+---
+
+<article id="banner" class="w-full h-screen relative">
+  <noscript>
+    <img
+      src="https://www.aceroform.com.mx/wp-content/uploads/2020/10/banner-construccion-1200x675.jpg"
+      alt="banner"
+      class="object-center w-full h-[calc(100vh+130px)] absolute top-[-130px] left-[0]"
+    />
+  </noscript>
+  <BannerCarrousel client:load />
+  <div class="absolute z-10 top-[65%] w-full flex item-center justify-center">
+    <span
+      style="font-family: 'LEMONMILK-Regular';"
+      class="text-[white] lg:text-7xl md:text-6xl sm:text-5xl text-3xl [text-shadow:2px_4px_2px_rgba(0,0,0,0.4)] -tracking-wider"
+      >Electro Space Construcciones</span
+    >
+  </div>
+</article>
+
+<script>
+  const banner = document.querySelector("#banner");
+</script>

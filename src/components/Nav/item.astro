@@ -1,0 +1,20 @@
+---
+interface Props {
+  name: string;
+  href: string;
+  className?: string;
+  viewId: string;
+}
+
+const { href, name, className, viewId } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class={`text-xl font-semibold ${className ? className : ""}`}
+    target="_self"
+    aria-haspopup="false"
+    data-view-id={viewId}>{name}</a
+  >
+</li>
