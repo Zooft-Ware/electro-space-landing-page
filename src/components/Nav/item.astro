@@ -9,7 +9,7 @@ interface Props {
 const { href, name, className, viewId } = Astro.props;
 ---
 
-<li>
+<li class="block px-3 rounded md:border-0">
   <a
     href={href}
     class={`text-xl font-semibold ${className ? className : ""}`}

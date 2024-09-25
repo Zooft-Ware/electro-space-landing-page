@@ -12,23 +12,58 @@ const { href } = Astro.url;
   <section>
     <Logo aClassName="Nav-Item" viewId="top" />
   </section>
-  <section>
-    <ul class="items-center justify-between flex md:flex-row md:gap-5 flex-col">
-      <Item viewId="about" name="Nosotros" href={href} className="Nav-Item" />
-      <Item
-        viewId="services"
-        name="Servicios"
-        href={href}
-        className="Nav-Item"
-      />
-      <Item
-        viewId="projects"
-        name="Proyectos"
-        href={href}
-        className="Nav-Item"
-      />
-      <Item viewId="footer" name="Contacto" href={href} className="Nav-Item" />
-    </ul>
+  <section class="max-w-screen-xl flex flex-wrap items-center p-4">
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-5 h-5"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </button>
+    <div
+      class="hidden w-full md:block md:w-auto md:static absolute top-[130px] left-[0px] bg-white md:bg-transparent"
+      id="navbar-default"
+    >
+      <ul
+        class="flex flex-col md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+      >
+        <Item viewId="about" name="Nosotros" href={href} className="Nav-Item" />
+        <Item
+          viewId="services"
+          name="Servicios"
+          href={href}
+          className="Nav-Item"
+        />
+        <Item
+          viewId="projects"
+          name="Proyectos"
+          href={href}
+          className="Nav-Item"
+        />
+        <Item
+          viewId="footer"
+          name="Contacto"
+          href={href}
+          className="Nav-Item"
+        />
+      </ul>
+    </div>
   </section>
 </nav>
 
@@ -37,10 +72,15 @@ const { href } = Astro.url;
   let lastScrollPosition = 0;
   const OFFSET_Y = 130;
   const Nav = document.querySelector("#main_nav") as HTMLDivElement;
+  const NavUlContainer = document.querySelector(
+    "#navbar-default"
+  ) as HTMLDivElement;
   if (window.scrollY < OFFSET_Y) {
     Nav.style.background =
       "linear-gradient(0deg, rgba(43, 63, 81, 0) 0%, #2d4256 100%)";
     Nav.style.color = "white";
+    NavUlContainer.style.background = "transparent";
+    NavUlContainer.style.color = "white";
   }
 
   window.addEventListener("scroll", onScroll);
@@ -62,10 +102,14 @@ const { href } = Astro.url;
       Nav.style.background =
         "linear-gradient(0deg, rgba(43, 63, 81, 0) 0%, #2d4256 100%)";
       Nav.style.color = "white";
+      NavUlContainer.style.background = "transparent";
+      NavUlContainer.style.color = "white";
       isPrimary = false;
     } else if (!isPrimary && window.scrollY > OFFSET_Y) {
       Nav.style.background = "white";
       Nav.style.color = "black";
+      NavUlContainer.style.background = "white";
+      NavUlContainer.style.color = "black";
       isPrimary = true;
     }
   }
