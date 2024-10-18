@@ -1,5 +1,5 @@
 ---
-interface Props {
+interface Props extends Pick<astroHTML.JSX.ImgHTMLAttributes, "alt"> {
   title: string;
   imgSrc: string;
   subtitle?: string;
@@ -7,21 +7,23 @@ interface Props {
   subtitleColor?: string;
 }
 
-const { title, subtitle, imgSrc, titleColor, subtitleColor } = Astro.props;
+const { title, subtitle, imgSrc, titleColor, subtitleColor, alt } = Astro.props;
 ---
 
 <div>
-  <a class="card" href="#">
-    <div class="overflow-hidden">
+  <a class="card">
+    <div class="overflow-hidden relative">
       <img
-        alt="card"
+        alt={alt ?? "card"}
         fetchpriority="high"
         decoding="async"
         src={imgSrc}
         class="object-cover object-center w-full h-[400px] transition-transform hover:scale-125"
         width={400}
         height={400}
+        loading="lazy"
       />
+      <slot name="overlay" />
     </div>
 
     <div class="mt-5">

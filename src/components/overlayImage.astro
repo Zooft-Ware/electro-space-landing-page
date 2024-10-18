@@ -1,0 +1,17 @@
+---
+interface Props
+  extends Pick<astroHTML.JSX.ImgHTMLAttributes, "class" | "alt" | "src"> {
+  top?: string | number;
+  left?: string | number;
+}
+
+const { class: ClassName, src, alt, top, left } = Astro.props;
+---
+
+<img
+  class={`absolute z-[1] ${ClassName ?? ""}`}
+  src={src}
+  alt={alt || "overlay_image_card"}
+  loading="lazy"
+  style={`top: ${top ?? 0}; left: ${left ?? "25%"};`}
+/>
