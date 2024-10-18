@@ -5,9 +5,18 @@ interface Props extends Pick<astroHTML.JSX.ImgHTMLAttributes, "alt"> {
   subtitle?: string;
   titleColor?: string;
   subtitleColor?: string;
+  disableHoverTransition?: boolean;
 }
 
-const { title, subtitle, imgSrc, titleColor, subtitleColor, alt } = Astro.props;
+const {
+  title,
+  subtitle,
+  imgSrc,
+  titleColor,
+  subtitleColor,
+  alt,
+  disableHoverTransition,
+} = Astro.props;
 ---
 
 <div>
@@ -18,7 +27,7 @@ const { title, subtitle, imgSrc, titleColor, subtitleColor, alt } = Astro.props;
         fetchpriority="high"
         decoding="async"
         src={imgSrc}
-        class="object-cover object-center w-full h-[400px] transition-transform hover:scale-125"
+        class={`object-cover object-center w-full h-[400px] ${disableHoverTransition ? "" : "transition-transform hover:scale-125"}`}
         width={400}
         height={400}
         loading="lazy"
