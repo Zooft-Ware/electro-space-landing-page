@@ -29,8 +29,8 @@ const schema = yup.object({
   telefono: yup.string().required("El telefono es requerido"),
 });
 
-const serviceID = "default_service";
-const templateID = "template_h8z0kdk";
+const serviceID = "service_fmggebf";
+const templateID = "template_5xxmoaa";
 
 export default function Form() {
   const resolver = useYupValidationResolver(schema);
@@ -42,7 +42,7 @@ export default function Form() {
   const onSubmit = useCallback(async (data: Params) => {
     try {
       const res = await emailjs.send(serviceID, templateID, data, {
-        publicKey: "GcObPSENToZRNCci-",
+        publicKey: "_mHBu5fdC8a9OUaSE",
         blockList: {
           watchVariable: data.email,
         },
