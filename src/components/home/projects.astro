@@ -11,7 +11,7 @@ import Fade from "../fade.astro";
       ALGUNOS DE NUESTROS CLIENTES
     </h1>
     <div
-      class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-32 justify-center item-center mb-10"
+      class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-32 justify-center item-center mb-32"
     >
       <div class="flex justify-center items-center">
         <img
@@ -19,7 +19,7 @@ import Fade from "../fade.astro";
           fetchpriority="high"
           decoding="async"
           src="images/proyectos/overlay_image5.png"
-          class="md:w-[50%] h-[200px]"
+          class="md:w-[50%] h-[200px] object-contain"
           loading="lazy"
         />
       </div>
@@ -29,7 +29,7 @@ import Fade from "../fade.astro";
           fetchpriority="high"
           decoding="async"
           src="images/proyectos/overlay_image2.png"
-          class="md:w-[70%] h-[200px]"
+          class="md:w-[70%] h-[200px] object-contain"
           loading="lazy"
         />
       </div>
@@ -39,17 +39,21 @@ import Fade from "../fade.astro";
           fetchpriority="high"
           decoding="async"
           src="images/proyectos/overlay_image1.png"
-          class="md:w-[50%] h-[250px]"
+          class="md:w-[50%] h-[250px] object-contain"
           loading="lazy"
         />
       </div>
+    </div>
+    <div
+      class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-32 justify-center item-center mb-10"
+    >
       <div class="flex justify-center items-center">
         <img
           alt="TODOGAS"
           fetchpriority="high"
           decoding="async"
           src="images/proyectos/overlay_image3.png"
-          class="md:w-[70%] h-[200px]"
+          class="md:w-full h-[200px] object-contain"
           loading="lazy"
         />
       </div>
@@ -59,7 +63,7 @@ import Fade from "../fade.astro";
           fetchpriority="high"
           decoding="async"
           src="images/proyectos/overlay_image4.png"
-          class="md:w-[90%] h-[175px] invert"
+          class="md:w-[90%] h-[175px] invert object-contain"
           loading="lazy"
         />
       </div>
